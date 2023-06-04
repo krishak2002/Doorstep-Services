@@ -63,7 +63,7 @@ public class MyRestController {
                 rs.updateString("photo", "../myuploads/" + f1.getOriginalFilename());
                 rs.insertRow();
 
-                ans = "</h2> Sign Up successful </h2>";
+                ans = "success";
                 return ans;
             }
 

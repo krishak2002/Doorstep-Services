@@ -46,7 +46,7 @@
 
                     var ans = xhttp.responseText;
                     alert(ans);
-                    //renderslots(ans);
+                     window.location.href="index.jsp";
 
                 }
             };
@@ -114,7 +114,7 @@
 
                         } else {
 //success
-onlinepayment();
+                 onlinepayment();
                             //payment success
                             //call your book payment function here
                         }

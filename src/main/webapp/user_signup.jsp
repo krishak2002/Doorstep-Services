@@ -36,7 +36,11 @@
                 
             function renderAsHtml(ans)
             { 
-                 document.getElementById("d1").innerHTML = ans;
+                alert(ans);
+                if(ans==="success"){
+                       window.location.href = "login.jsp";
+                }
+                 //document.getElementById("d1").innerHTML = ans;
                 
             }
         

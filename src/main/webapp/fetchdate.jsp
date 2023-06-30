@@ -23,7 +23,7 @@
              function sendDate()
         {
            
-            alert(em+" "+date);
+            //alert(em+" "+date);
             
              var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -31,7 +31,7 @@
                     // Typical action to be performed when the document is ready:
 
                     var ans = xhttp.responseText;
-                    alert(ans);
+                    //alert(ans);
                     renderslots(ans);
 
                 }
@@ -54,8 +54,8 @@
             var output = '<table class="table table-hover">';
             output += ' <tr>';
             output += ' <th>Choose your Slots</th>';
-            output += '<th>start slot</th>';
-            output += '<th>end slot</th>';
+            output += '<th>start slot (24hr Format)</th>';
+            output += '<th>end slot (24hr Format)</th>';
 
             output += '<th>status</th>';
             output += '</tr>';
@@ -70,8 +70,8 @@
                     output += '<td><input type="checkbox" name="r2" value='+obj.start_slot+' onchange="slot(this)"/></td>';
                     //Active checkbox  value=\"+obj.starttime+"\;
                 }
-                output += '<td>' + obj.start_slot + '</td>';
-                output += '<td>' + obj.end_slot + '</td>';
+                output += '<td>' + obj.start_slot + ' : 00 IST -----------to----------------------------></td>';
+                output += '<td>' + obj.end_slot + ': 00 IST</td>';
                 output += '<td>' + obj.status + '</td>';
                 slotamount=obj.slot_amount;
 
@@ -103,21 +103,21 @@
         
         
       function bookslot(){
-          alert("bookslots function initialized");
+          //alert("bookslots function initialized");
      
           var allslots="";
       var name=document.getElementsByName("r2");
       console.log(name);
-      alert(name);
+      //alert(name);
       
       for(var i=0;i<name.length;i++){
           
           if(name[i].checked){
               allslots += name[i].value + ",";
-               alert(name[i].value);
+               //alert(name[i].value);
           }
       }
-      alert(allslots);
+      //alert(allslots);
       console.log(allslots);
       
       window.location.href="modeofpayment.jsp?date="+date+"&email="+em+"&total="+grandtotal+"&allslots="+allslots;
@@ -141,7 +141,7 @@
             <div id="d3">
                 
                 
-            </div>
+            </div >
             
             <input type="button" value="bookslots" onclick="bookslot()" />
             

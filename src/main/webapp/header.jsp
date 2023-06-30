@@ -1,5 +1,5 @@
 <head>
-<title>Barber Beauty Category Flat Bootstrap Responsive Website Template | Home :: W3layouts</title>
+<title>DoorStep Services | Home </title>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">

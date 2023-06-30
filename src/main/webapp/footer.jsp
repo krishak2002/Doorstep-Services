@@ -2,12 +2,12 @@
 	<div class="container py-lg-3">
 		<div class="logo mb-5 text-center">
 			<a class="navbar-brand" href="index.html">
-				<i class="fas fa-cut"></i> Barber <span> Best Hair Salon</span></a> 
+				<i class="fas fa-home"></i> DoorStep Services <span> At your Door</span></a> 
 		</div>
 		<div class="subscribe_inner">
-			<i class="fas fa-cut"></i>
+			<i class="fas fa-home"></i>
 			<h4 class="mb-4">Subscribe Us</h4>
-			<p class="mb-4">Subscribe to our Newsletter to get latest offers from our Barber. </p>
+			<p class="mb-4">Subscribe to our Newsletter to get latest offers from our Vendors. </p>
 			<form action="#" method="post" class="subscribe_form">
 				<input class="form-control" type="email" placeholder="Enter Your Email..." required="">
 				<button type="submit" class="btn1 btn-primary submit"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="copyright mt-5">
-			<p>© 2018 Barber. All Rights Reserved | Design by	<a href="http://w3layouts.com/">W3layouts</a> </p>
+			<p>© 2018 DoorStep Services. All Rights Reserved  </p>
 		</div>
 	</div>
 </section>

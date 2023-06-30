@@ -30,7 +30,7 @@
                                 <a class="nav-link scroll" href="#services">Services</a>
                             </li>
                             
-                            <li class="nav-item">
+                            <li class="nav-item" >
                                 <a  href="vendor_logout.jsp" >Logout</a>
                             </li>
 
@@ -48,9 +48,9 @@
             </div>
             <!--//nav-->
         </div>
-        <div class="logo text-center">
+<!--        <div class="logo text-center">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-cut"></i> Barber <span> Best Hair Salon</span></a> 
-        </div>
+                <i class="fas fa-home"></i> Barber <span> Best Hair Salon</span></a> 
+        </div>-->
     </div>
 </header>

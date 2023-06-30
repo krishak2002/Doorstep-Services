@@ -10,11 +10,11 @@
     </head>
 
     <body>
-
+         <%@include file="vendor_index_navbar.jsp" %>
         <% 
             String vendoremail= (String)session.getAttribute("vendor_user_email");
         %>
-        <%@include file="vendor_index_navbar.jsp" %>
+      
         <!--        <br><br><br><br><br><br>  <br><br>-->
         <section class="services py-5" id="services">
             <div class="container-fluid">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="row about-grids">
                     <div class="col-lg-4 about-grid1 mb-lg-0 mb-5">
-                        <div class="about-grid2 p-5" style="text-align:center">
+                        <div class="about-grid3 p-5" style="text-align:center">
 
 
                             <a href='vendor_edit_profile.jsp'><h3>Edit <br> Profile</h3></a>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="about-grid2 p-5" style="text-align:center">
+                        <div class="about-grid3 p-5" style="text-align:center">
                        <a href='manage_booking.jsp'> <h3>Manage <br> Booking</h3></a>
                         </div>
                     </div>

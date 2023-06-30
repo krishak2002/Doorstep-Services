@@ -26,15 +26,15 @@
            
             function checkuserlogin(serviceid, categoryname)
             {
-                alert(serviceid + " " + categoryname);
+               // alert(serviceid + " " + categoryname);
             }
 
              function check(id,servicename)
             {
-                alert(id);
-                alert(servicename);
+//                alert(id);
+//                alert(servicename);
                 if(em != "null"){
-                   window.location.href="userShowAllSubServices.jsp?serviceid="+id;
+                   window.location.href="userShowAllSubServices.jsp?serviceid="+id+"&servicename="+servicename;
                }
                else{
                    window.location.href="login.jsp";
@@ -144,7 +144,7 @@
                                 <div class="banner-text container">
                                     <h5 class="tag text-left mb-3 text-uppercase">We are professional </h5>
                                     <h1 class="movetxt text-left agile-title text-uppercase">The Best Place For </h1>
-                                    <h2 class="movetxt text-left mb-3 agile-title text-uppercase">Hair Salon </h2>							
+                                    <h2 class="movetxt text-left mb-3 agile-title text-uppercase">Door To Door Services </h2>							
                                     <a class="bt mt-4 text-capitalize scroll" href="#about" role="button"> read more
                                         <i class="fas fa-cut"></i>
                                     </a>
@@ -157,10 +157,10 @@
                             <div class="bs-slider-overlay">
                                 <div class="banner-text container">
                                     <h5 class="tag text-left mb-3 text-uppercase">We are unique</h5>
-                                    <h4 class="movetxt text-left agile-title text-uppercase">Your Hair Beauty </h4>
+                                    <h4 class="movetxt text-left agile-title text-uppercase">Your Services </h4>
                                     <h4 class="movetxt text-left mb-3 agile-title text-uppercase">Our Duty </h4>
                                     <a class="bt mt-4 text-capitalize scroll" href="#about" role="button"> read more
-                                        <i class="fas fa-cut"></i>
+                                        <i class="fas fa-home"></i>
                                     </a>
                                 </div>
                             </div>
@@ -170,12 +170,12 @@
                         <div class="slider-info bg3">
                             <div class="bs-slider-overlay">
                                 <div class="banner-text container">
-                                    <h5 class="tag text-left mb-3 text-uppercase">We make your hair</h5>
-                                    <h4 class="movetxt text-left agile-title text-uppercase">We Make Your Hair </h4>
+                                    <h5 class="tag text-left mb-3 text-uppercase">We our Convenient</h5>
+                                    <h4 class="movetxt text-left agile-title text-uppercase">We Make Your Home </h4>
                                     <h4 class="movetxt text-left mb-3 agile-title text-uppercase">Look Perfect </h4>
 
                                     <a class="bt mt-4 text-capitalize scroll" href="#about" role="button"> read more
-                                        <i class="fas fa-cut"></i>
+                                        <i class="fas fa-home"></i>
                                     </a>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@
                                     <h4 class="movetxt text-left agile-title text-uppercase">Rea Man's to go </h4>
                                     <h4 class="movetxt text-left mb-3 agile-title text-uppercase">Real Beards </h4>
                                     <a class="bt mt-4 text-capitalize scroll" href="#about" role="button"> read more
-                                        <i class="fas fa-cut"></i>
+                                        <i class="fas fa-home"></i>
                                     </a>
                                 </div>
                             </div>
@@ -204,20 +204,20 @@
         <section class="about py-5" id="about">
             <div class="container py-lg-3 py-2">
                 <div class="heading text-center">
-                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-home"></i>
                     <h3 class="heading mb-sm-5 mb-3 text-uppercase">About us</h3>
                 </div>
                 <div class="row about-grids">
                     <div class="col-lg-4 about-grid1 mb-lg-0 mb-5">
-                        <h3 class="text-uppercase">Welcome to our Hair Salon shop</h3>
+                        <h3 class="text-uppercase">Welcome to our  shop</h3>
                         <p class="my-lg-4 my-3">Nam sed ullamcorper elit, sit amet libero in imperdiet dolor. Maecenas non commodo libero. Suspendisse sit amet arcu augue efficitur luctus a nec ipsum dolor sit amet.</p>
                         <a class="bt text-capitalize" href="#" role="button"> read more
-                            <i class="fas fa-cut"></i>
+                            <i class="fas fa-home"></i>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="about-grid2 p-5">
-                            <h3>Expert in hair style</h3>
+                            <h3>Expert in our Services</h3>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -234,7 +234,7 @@
         <section class="services py-5" id="services">
             <div class="container-fluid">
                 <div class="heading text-center">
-                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-home"></i>
                     <h3 class="heading mb-sm-5 mb-3 text-uppercase">What We Do</h3>
                 </div>
                 <div id="servicesRendered" class="row service-grids">
@@ -307,8 +307,8 @@
         <section class="barbers py-5" id="team">
             <div class="container py-lg-3 py-2">
                 <div class="heading text-center">
-                    <i class="fas fa-cut"></i>
-                    <h3 class="heading mb-sm-5 mb-3 text-uppercase">Our Barbers</h3>
+                    <i class="fas fa-home"></i>
+                    <h3 class="heading mb-sm-5 mb-3 text-uppercase">Our Vendors</h3>
                 </div>
                 <div class="row barber-grids">
                     <div class="col-lg-3 col-sm-6 mb-lg-0 mb-5 text-center">
@@ -316,7 +316,7 @@
                             <img src="images/barber1.jpg" class="img-fluid" alt=""/>
                         </div>
                         <h4 class="mt-3">David Alison</h4>
-                        <p>Barber</p>
+                        <p>Plumber</p>
                         <div class="social mt-2">
                             <ul class="d-flex justify-content-center">
                                 <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -330,7 +330,7 @@
                             <img src="images/barber2.jpg" class="img-fluid" alt=""/>
                         </div>
                         <h4 class="mt-3">David Alison</h4>
-                        <p>Barber</p>
+                        <p>Electrician</p>
                         <div class="social mt-2">
                             <ul class="d-flex justify-content-center">
                                 <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -344,7 +344,7 @@
                             <img src="images/barber3.jpg" class="img-fluid" alt=""/>
                         </div>
                         <h4 class="mt-3">David Alison</h4>
-                        <p>Barber</p>
+                        <p>Carpenter</p>
                         <div class="social mt-2">
                             <ul class="d-flex justify-content-center">
                                 <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -440,9 +440,9 @@
                 <div class="responsive_tabs">
                     <div id="horizontalTab">
                         <ul class="resp-tabs-list">
-                            <li>Hair Cut</li>
-                            <li>Make Up</li>
-                            <li>Waxing</li>
+                            <li>Water leakage</li>
+                            <li>Cleaning</li>
+                            <li>Spa- Services</li>
                             <li>Beard Style</li>
                         </ul>
                         <div class="resp-tabs-container">
@@ -451,19 +451,19 @@
                                 <div class="tab-info">
                                     <div class="row tab-grids">
                                         <div class="col-md-6">
-                                            <h3>Classic Hair Cut <span class="price"> 12$</span></h3>
+                                            <h3>House Cleaning <span class="price"> 12$</span></h3>
                                             <p class="mt-3">Nam sed ullamcorper elit, sit amet libero in imperdiet dolor. Maecenas non commodo libero. Suspendisse sit amet</p>
                                         </div>
                                         <div class="col-md-6 mt-md-0 mt-3">
-                                            <h3>Hair Trimming <span class="price"> 06$</span></h3>
+                                            <h3> SPA Services <span class="price"> 06$</span></h3>
                                             <p class="mt-3">Nam sed ullamcorper elit, sit amet libero in imperdiet dolor. Maecenas non commodo libero. Suspendisse sit amet</p>
                                         </div>
                                         <div class="col-md-6 mt-md-5 mt-3">
-                                            <h3>Clipper Cut <span class="price"> 11$</span></h3>
+                                            <h3> Plumbing  <span class="price"> 11$</span></h3>
                                             <p class="mt-3">Nam sed ullamcorper elit, sit amet libero in imperdiet dolor. Maecenas non commodo libero. Suspendisse sit amet</p>
                                         </div>
                                         <div class="col-md-6 mt-md-5 mt-3">
-                                            <h3>Clean Shave <span class="price"> 09$</span></h3>
+                                            <h3> Furniture <span class="price"> 09$</span></h3>
                                             <p class="mt-3">Nam sed ullamcorper elit, sit amet libero in imperdiet dolor. Maecenas non commodo libero. Suspendisse sit amet</p>
                                         </div>
                                     </div>

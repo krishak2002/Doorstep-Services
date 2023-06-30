@@ -3,7 +3,7 @@
     <head>
         <title> Admin Manage Services </title>
         <%@include file="header.jsp" %>
-
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -45,17 +45,24 @@
             }
 
             function renderAsHtml(ans) {
-                       alert(ans);
+                      // alert(ans);
                     if(ans==="success")
                     {
-                       alert("service added successfully");
+                      Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            });
+                       showservices();
                     }
                     else{
-                        alert("error occured");
+                       Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
                          //document.getElementById("d1").innerHTML = ans;
                     }
-              
-
             }
             
             
@@ -124,14 +131,23 @@
                             var res = this.responseText;
                             res = res.trim();
 
-                            if (res == "success")
-                            {
-                                alert("deleted successfully");
-                                showservices();
-                            } else
-                            {
-                                alert(res);
-                            }
+                            if(res==="success")
+                    {
+                      Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: res
+                            });
+                       showservices();
+                    }
+                    else{
+                       Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: res
+                    });
+                         //document.getElementById("d1").innerHTML = ans;
+                    }
                         }
                     };
                     //2. Prepare request (Define target --> servlet)

@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>JSP Page</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <%@include file="header.jsp"%>
 
 
@@ -13,6 +14,7 @@
                 String vendoremail=(String)session.getAttribute("vendor_user_email");
             %>
                  var vem="<%=vendoremail%>";
+                 
             function getvendordata()
 
             {
@@ -57,7 +59,7 @@
           function vendor_edit_profile()
           {
               
-              alert("vendor_edit_profile working");
+//              alert("vendor_edit_profile working");
               var name=document.getElementById("name").value;
               var description =document.getElementById("description").value;
               var slot_amount=document.getElementById("slot_amount").value;
@@ -70,7 +72,30 @@
                         // Typical action to be performed when the document is ready:
 
                         var ans = xhttp.responseText;
-                        alert(ans);
+//                        alert(ans);
+            if(ans==='edit successfull')
+            {
+                Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: 'Edit successful!'
+                            }).then(function () {
+                                window.location = "vendor_index.jsp";
+                            });
+                    
+                     // window.location.href="vendor_index.jsp");
+            }
+            else
+            {
+                Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Edit Failed !'
+                    });
+                    alert(ans);
+            }
+                  
+                      
 
                     }
                 };
@@ -102,7 +127,7 @@
             <div class="test_agile_info py-5">
                 <div class="container py-lg-3">
                     <div class="heading text-center">
-                        <i class="fas fa-cut"></i>
+                        <i class="fas fa-home"></i>
                         <h3 class="heading mb-sm-5 mb-3 text-uppercase" >Edit your Profile</h3>
                     </div>
                     <div class="contact_grid_right">
@@ -112,7 +137,7 @@
                                 
                                 
                                  <div class="form-group">
-                                    <input class="form-control" type="email"  id="email" placeholder="Email" required="">
+                                    <input class="form-control" type="email"  id="email" placeholder="Email" required="" readonly="" >
                                 </div>
                                 
                                 <div class="form-group">

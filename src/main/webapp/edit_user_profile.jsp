@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>JSP Page</title>
         <%@include file="header.jsp"%>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
         <script>
@@ -41,7 +41,7 @@
              
            function renderAsHTML(t)
             {
-                alert(t);
+               // alert(t);
                 var ans = "";
                 var obj = JSON.parse(t);
                 var arr = obj["ans"];
@@ -58,7 +58,7 @@
           function user_edit_profile()
           {
               
-              alert("user_edit_profile working");
+             // alert("user_edit_profile working");
               var name=document.getElementById("name").value;
              
               var phoneno=document.getElementById("phoneno").value;
@@ -71,7 +71,14 @@
                         // Typical action to be performed when the document is ready:
 
                         var ans = xhttp.responseText;
-                        alert(ans);
+                        //alert(ans);
+                         Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            }).then(function () {
+                                window.location = "index.jsp";
+                            });
 
                     }
                 };
@@ -103,7 +110,7 @@
             <div class="test_agile_info py-5">
                 <div class="container py-lg-3">
                     <div class="heading text-center">
-                        <i class="fas fa-cut"></i>
+                        <i class="fas fa-home"></i>
                         <h3 class="heading mb-sm-5 mb-3 text-uppercase" >Edit your Profile</h3>
                     </div>
                     <div class="contact_grid_right">

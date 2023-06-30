@@ -50,7 +50,7 @@
           function approveslot(bookingid)
           {
                
-            alert("approves slots working");
+           // alert("approves slots working");
      
             //1. Make object of XMLHttpRequest
             var xhttp = new XMLHttpRequest();
@@ -83,7 +83,7 @@
              
         function showslots()
         {
-            alert("show slots working");
+           // alert("show slots working");
      
             //1. Make object of XMLHttpRequest
             var xhttp = new XMLHttpRequest();

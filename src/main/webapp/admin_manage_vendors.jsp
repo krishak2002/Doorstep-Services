@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
 
@@ -46,7 +47,7 @@
                     if (this.readyState == 4 && this.status == 200) {
                         var res = this.responseText;
                         res = res.trim();
-                        alert(res);
+                       // alert(res);
                         var mainobj = JSON.parse(res);
                         var arr = mainobj["ans"];
 
@@ -116,7 +117,28 @@
                     if (this.readyState == 4 && this.status == 200) {
                         var res = this.responseText;
                         res = res.trim();
-                 alert(res);
+                     // alert(res);
+                     
+                      if(res==='success')
+                {
+                    
+               Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: res
+                            })
+                }
+                else {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: res
+                    });
+                    alert(res);
+                }
+                     
+                     
                         var ans = "";
                         ans = ans + "<input type=\"button\" value=\'Approved' class=\"btn btn-success\" onclick=\"pendingvendor( '" + email + "','" + index + "' )\" ><br><br>";
                         document.getElementById("status" + index).innerHTML = ans;
@@ -140,7 +162,31 @@
                     if (this.readyState == 4 && this.status == 200) {
                         var res = this.responseText;
                         res = res.trim();
-                        alert(res);
+                       // alert(res);
+                        
+                         if(res==='success')
+                {
+                    
+               Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: res
+                            })
+                }
+                else {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: res
+                    });
+                    alert(res);
+                }
+                     
+                        
+                        
+                        
+                        
                         var ans = "";
                         ans = ans + "<input type=\"button\" value=\'Pending' class=\"btn btn-danger\" onclick=\"approvevendor( '" + email + "','" + index + "' )\" ><br><br>";
                         document.getElementById("status" + index).innerHTML = ans;

@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-       
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <%@include file="header.jsp" %>
 
         <script>
@@ -31,12 +31,28 @@
 
             function renderAsHtml(ans)
             {
-                if (ans == "success") {
-                    alert("Success");
-                    window.location.href="index.jsp";
-                } else {
-                    alert("fail");
+                 if(ans==="success")
+                    {
+                       Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            }).then(function () {
+                                window.location = "index.jsp";
+                            });
+                             
                 }
+                      
+                    
+                    else{
+                           Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
+                         //document.getElementById("d1").innerHTML = ans;
+                    }
             }
 
         </script>

@@ -35,9 +35,9 @@
             function COD()
             {
                
-               alert(vendoremail);
+              // alert(vendoremail);
                
-            alert("sending");
+            //alert("sending");
             
              var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -45,14 +45,20 @@
                     // Typical action to be performed when the document is ready:
 
                     var ans = xhttp.responseText;
-                    alert(ans);
-                     window.location.href="index.jsp";
+                    Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            }).then(function () {
+                                window.location = "index.jsp";
+                            });
+//                     window.location.href="index.jsp";
 
                 }
             };
 
             //prepare request Step2
-            alert(date+" "+vendoremail);
+            //alert(date+" "+vendoremail);
              xhttp.open("GET", "./COD?date="+date+"&email="+vendoremail+"&grandtotal="+grandtotal+"&allslots="+allslots+" ", true);
 
             //step3

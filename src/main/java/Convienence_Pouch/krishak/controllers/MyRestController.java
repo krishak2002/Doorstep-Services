@@ -108,7 +108,7 @@ public class MyRestController {
 
     @GetMapping("/showAllVendors")
     String showAllVendors(@RequestParam String name) {
-        String ans = new RDBMS_TO_JSON().generateJSON("select * from vendor_table where subservice='" + name + "'");
+        String ans = new RDBMS_TO_JSON().generateJSON("select * from vendor_table where subservice='" + name + "' and status ='Approved'");
 
         return ans;
     }
@@ -319,7 +319,7 @@ sendWA.sendWA(phoneno,"Payment Done Successfull. Your Booking-id is "+bookingid+
     }
 
     @PostMapping("/vendorSignup")
-    String vendorSignup(@RequestParam String username, @RequestParam String password, @RequestParam String email, @RequestParam String subservices, @RequestParam int services, @RequestParam String description, @RequestParam String start_slot, @RequestParam String end_slot, @RequestParam String slot_amount, @RequestParam String latitute, @RequestParam String longitute, @RequestParam String address) {
+    String vendorSignup(@RequestParam String username, @RequestParam String password, @RequestParam String email, @RequestParam String subservices, @RequestParam int services, @RequestParam String description, @RequestParam String start_slot, @RequestParam String end_slot, @RequestParam String slot_amount, @RequestParam String latitute, @RequestParam String longitute, @RequestParam String address,HttpSession session) {
 
         String ans = "";
         try {
@@ -337,13 +337,14 @@ sendWA.sendWA(phoneno,"Payment Done Successfull. Your Booking-id is "+bookingid+
                 rs.updateString("Description", description);
                 rs.updateString("Address", address);
                 rs.updateString("slot_amount", slot_amount);
-                rs.updateString("status", "Approved");
+                rs.updateString("status", "Pending");
                 rs.updateString("start_time", start_slot);
                 rs.updateString("end_time", end_slot);
                 rs.updateString("latitute", latitute);
                 rs.updateString("longitute", longitute);
 
                 rs.insertRow();
+                session.setAttribute("vendor_user_email", email);
                 ans = "success";
             } else {
                 ans = "vendor_email already registered";
@@ -715,7 +716,7 @@ catch (Exception ex) {
         String ans="";
         
         try{
-        ResultSet rs = DBLoader.executeSQL("select * from  subservices where name="+subservicename);
+        ResultSet rs = DBLoader.executeSQL("select * from  subservices where name='"+subservicename+"'");
          
         if(rs.next())
         {
@@ -858,7 +859,7 @@ catch (Exception ex) {
                
                 
                 rs.updateRow();
-                ans = "edit successfull";
+                ans = "success";
             } else {
                 ans = "edit failed";
             }
@@ -869,15 +870,15 @@ catch (Exception ex) {
     }
     
     @GetMapping("/userAddReview_Servlet")
-    public String userAddReview_Servlet(@RequestParam String comment, @RequestParam String vendoremail, @RequestParam int rating, HttpSession session) {
+    public String userAddReview_Servlet(@RequestParam String comment, @RequestParam String vendoremail, @RequestParam int rating,@RequestParam String useremail, HttpSession session) {
 
-        String useremail = (String) session.getAttribute("email");
+        //String useremail = (String) session.getAttribute("email");
 
         System.out.println(useremail);
 
         try {
 
-            System.out.println("select * from rating");
+          
             ResultSet rs = DBLoader.executeSQL("select * from review");
 
             rs.moveToInsertRow();

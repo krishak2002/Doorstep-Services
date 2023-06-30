@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
        
         <%@include file="header.jsp" %>
 
@@ -31,11 +32,25 @@
 
             function renderAsHtml(ans)
             {
-                if (ans == "success") {
-                    alert("admin_login_successull");
-                    window.location.href="admin_home.jsp";
-                } else {
-                    alert("fail");
+                if(ans==='success')
+                {
+                    
+               Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: 'Login successful!'
+                            }).then(function () {
+                                window.location = "admin_home.jsp";
+                            });
+                }
+                else {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Login Failed !'
+                    });
+                    alert(ans);
                 }
             }
 

@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>JSP Page</title>
         <%@include file="header.jsp" %>
 
@@ -15,7 +16,7 @@
             
              function addPhoto()
             {
-                alert("adding photo");
+               // alert("adding photo");
                 var url = "./vendorAddPhotos";
                 var photo = document.getElementById("photo").files[0];
 
@@ -43,25 +44,26 @@
             
              function renderAddedPhotos(ans)
             {
-                alert(ans);
+               // alert(ans);
                 if (ans == "success")
                 {
-//                    Swal.fire({
-//                        icon: 'sucsess',
-//                        title: 'Done...',
-//                        text: 'Photo Added Successfully!'
-//                    })
+                   
+                    Swal.fire({
+                        icon: 'sucsess',
+                        title: 'Done...',
+                        text: 'Photo Added Successfully!'
+                    })
                     document.getElementById("vendorpic").reset();
-                   vendorShowPhotos();
+                     vendorShowPhotos();
                 } 
-//                else
-//                {
-//                    Swal.fire({
-//                        icon: 'error',
-//                        title: 'Oops...',
-//                        text: 'Error Occured !'
-//                    });
-//                }
+                else
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error Occured !'
+                    });
+                }
             }
 
             
@@ -71,7 +73,7 @@
             
             function vendorShowPhotos()
             {
-                alert(vem);
+                //alert(vem);
 
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -79,7 +81,7 @@
                         // Typical action to be performed when the document is ready:
 
                         var ans = xhttp.responseText;
-                        alert(ans);
+                       // alert(ans);
                         renderphotos(ans);
 
                     }
@@ -118,7 +120,7 @@
 
              function deleteVendorPhoto(photoid)
              {
-                  alert(photoid);
+                  //alert(photoid);
 
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -126,7 +128,7 @@
                         // Typical action to be performed when the document is ready:
 
                         var ans = xhttp.responseText;
-                        alert(ans);
+                        //alert(ans);
                         deletePhoto(ans);
 
                     }
@@ -143,21 +145,21 @@
             {
                 if (ans === "success")
                 {
-//                    Swal.fire({
-//                        icon: 'sucsess',
-//                        title: 'Done...',
-//                        text: 'Photo Removed Successfully!'
-//                    })
+                    Swal.fire({
+                        icon: 'sucsess',
+                        title: 'Done...',
+                        text: 'Photo Removed Successfully!'
+                    })
                    vendorShowPhotos();
                 } else
                 {
-//                    Swal.fire({
-//                        icon: 'error',
-//                        title: 'Oops...',
-//                        text: 'Error While Deleting !'
-//                    });
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error While Deleting !'
+                    });
                     
-                    alert("photo not deleted");
+//                    alert("photo not deleted");
                 }
             }
              
@@ -170,7 +172,7 @@
       
          <%@include file="vendor_index_navbar.jsp" %>
 
-        <div class="loader-box">
+<!--        <div class="loader-box">
             <div class="loader-text">
                 <span class="let1">L</span>
                 <span class="let2">o</span>
@@ -183,7 +185,7 @@
                 <span class="let9">.</span>
                 <span class="let10">.</span>
             </div>
-        </div>
+        </div>-->
         <!-- Loader End -->
 
         <!-- Header Start -->
@@ -193,7 +195,7 @@
         <section class="main-classes" >
 
             <div class="classes-overlay-bg animate-this">
-                <img src="../images/banner1.jpg"  width="200px" height="200px" alt="Overlay">
+                <img src="../myuploads/doorstep.jpeg"  width="150px" height="300px" alt="Overlay">
             </div>
             <div class="container">
                 <div class="row">

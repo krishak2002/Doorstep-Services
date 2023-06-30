@@ -68,8 +68,6 @@
                 document.getElementById("d2").innerHTML = output;
 
 
-
-
             }
 
 

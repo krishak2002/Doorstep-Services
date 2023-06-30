@@ -145,7 +145,7 @@ li.nav-item {
 
 /*-- banner --*/
 .bg1 {
-    background: url(../images/banner1.jpg)no-repeat center;
+    background: url(../myuploads/carpenter3.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -165,7 +165,7 @@ li.nav-item {
 }
 
 .bg3 {
-    background: url(../images/banner5.jpg)no-repeat center;
+    background: url(../myuploads/electrician3.avif)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -582,7 +582,7 @@ h3.heading:after{
     border-bottom: 1px solid #00a98f;
 }
 .about-grid2 {
-    background: url(../images/banner1.jpg) no-repeat 0px 0px;
+    background: url(../myuploads/addphotos.png) no-repeat 0px 0px;
 	background-size: cover;
     position: relative;
     z-index: 1;
@@ -598,7 +598,7 @@ h3.heading:after{
     text-transform: capitalize;
 }
 .about-grid3 {
-    background: url(../images/banner2.jpg) no-repeat 0px 0px;
+    background: url(../myuploads/managebooking.jpg) no-repeat 0px 0px;
 	background-size: cover;
     position: relative;
     z-index: 1;

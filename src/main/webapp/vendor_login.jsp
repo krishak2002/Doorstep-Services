@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>JSP Page</title>
        
         <%@include file="header.jsp" %>
@@ -32,10 +33,23 @@
             function renderAsHtml(ans)
             {
                 if (ans == "success") {
-                    alert("Success");
-                    window.location.href="vendor_index.jsp";
-                } else {
-                    alert("fail");
+                    Swal.fire({
+                                icon: 'sucsess',
+                                title: 'Done...',
+                                text: 'Signed in successfull!'
+                            }).then(function () {
+                                window.location = "vendor_index.jsp";
+                            });
+                } 
+                else {
+                    
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
+                  
                 }
             }
 

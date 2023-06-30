@@ -12,16 +12,17 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
         
-
+         <%@include file="navbar.jsp" %>
     </head>
     
     <%
             String email= (String) request.getParameter("email");
+            String user=(String)session.getAttribute("useremail");
            
         %>
     
         <script>
-        
+        var user="<%=user%>";
         function review1()
             {
                 $("#myModal1").modal("show");
@@ -112,7 +113,7 @@
                     };
 
                     //2. Prepare request (Define target --> servlet)
-                    xhttp.open("GET", "./userAddReview_Servlet?comment=" + comment + "&vendoremail=" + '<%=email%>' + "&rating=" + n, true);
+                    xhttp.open("GET", "./userAddReview_Servlet?comment=" + comment + "&vendoremail=" + '<%=email%>' + "&rating=" + n +"&useremail=" +user, true);
 
                     //3. Send Request
                     xhttp.send();
@@ -171,7 +172,7 @@
                     }
                 };
                 //2. Prepare request (Define target --> servlet)
-                xhttp.open("GET", "./userShowRatingsServlet?vendoremail=" + '<%=email%>', true);
+                xhttp.open("GET", "./userShowRatingsServlet?vendoremail=" +'<%=email%>', true);
 
                 //3. Send Request
                 xhttp.send();
@@ -259,7 +260,7 @@
                     // Typical action to be performed when the document is ready:
 
                     var ans = xhttp.responseText;
-                    alert(ans);
+//                    alert(ans);
                     renderAsHTML(ans);
 
                 }
@@ -305,7 +306,7 @@ document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q=" +
                     // Typical action to be performed when the document is ready:
 
                     var ans = xhttp.responseText;
-                    alert(ans);
+//                    alert(ans);
                     rendervendorphotos(ans);
 
                 }
@@ -321,7 +322,7 @@ document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q=" +
 
         function rendervendorphotos(t)
         {
-            alert("rendering gallery now");
+            //alert("rendering gallery now");
             var output = "";
             var obj = JSON.parse(t);
             var arr = obj["ans"];
@@ -349,7 +350,7 @@ document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q=" +
     <body onload="infoaboutsinglevendor()">
         
         
-        <%@include file="navbar.jsp" %>
+      
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

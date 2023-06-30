@@ -3,7 +3,7 @@
     <head>
         <title>User Sign Up</title>
         <%@include file="header.jsp" %>
-        
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             function userSignup(){
              var username=document.getElementById("Name").value;
@@ -36,11 +36,29 @@
                 
             function renderAsHtml(ans)
             { 
-                alert(ans);
-                if(ans==="success"){
-                       window.location.href = "login.jsp";
+                //alert(ans);
+                  if(ans==="success")
+                    {
+                       Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            }).then(function () {
+                                window.location = "login.jsp";
+                            });
+                             
                 }
-                 //document.getElementById("d1").innerHTML = ans;
+                      
+                    
+                    else{
+                           Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
+                         //document.getElementById("d1").innerHTML = ans;
+                    }
                 
             }
         
@@ -55,7 +73,7 @@
             <div class="test_agile_info py-5">
                 <div class="container py-lg-3">
                     <div class="heading text-center">
-                        <i class="fas fa-cut"></i>
+                        <i class="fas fa-home"></i>
                         <h3 class="heading mb-sm-5 mb-3 text-uppercase">User Sign Up</h3>
                     </div>
                     <div class="contact_grid_right">

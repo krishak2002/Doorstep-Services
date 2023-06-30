@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
         
         
         <script>
@@ -76,8 +76,8 @@
             
             function addsubservice()
             {
-                var sub_service_name=document.getElementById("sub_service_name");
-                var description=document.getElementById("description");
+                var sub_service_name=document.getElementById("sub_service_name").value;
+                var description=document.getElementById("description").value;
                  
                   var f1 = document.getElementById("photo").files[0];
 
@@ -93,7 +93,7 @@
                 
                 formdata.append("f1", f1);
 
-
+                 alert(sub_service_name+" "+serviceid+" "+description);
                      
                 var url = "./addSubService";
 
@@ -103,14 +103,25 @@
             }
 
             function renderAddedsubservice(ans) {
-                       alert(ans);
+                      // alert(ans);
                     if(ans==="success")
                     {
-                       alert("sub service added successfully");
-                       showsubservices();
-                    }
+                       Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            });
+                             showsubservices();
+                }
+                      
+                    
                     else{
-                        alert("error occured");
+                           Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
                          //document.getElementById("d1").innerHTML = ans;
                     }
               
@@ -120,7 +131,7 @@
             function deletesubservice(subservicename)
             {
                 sid=parseInt(sid);
-                var url = "./delete_sub_services_servlet?serviceid="+subservicename;
+                var url = "./delete_sub_services_servlet?subservicename="+subservicename;
 
                 fetch(url, {method: "POST"})
                         .then(response => response.text())
@@ -129,8 +140,29 @@
             
             function renderdeletedsubservice(ans)
             {
-                alert(ans);
-                showsubservices();
+//                alert(ans);
+                  
+                   if(ans==="success")
+                    {
+                       Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            });
+                            showsubservices();
+                }
+                       
+                    
+                    else{
+                           Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
+                         //document.getElementById("d1").innerHTML = ans;
+                    }
+               
             }
             
          
@@ -144,7 +176,7 @@
             <div class="test_agile_info py-5">
                 <div class="container py-lg-3">
                     <div class="heading text-center">
-                        <i class="fas fa-cut"></i>
+                        <i class="fas fa-home"></i>
                         <h3 class="heading mb-sm-5 mb-3 text-uppercase">Admin Manage Sub-Service</h3>
                     </div>
                     <div class="contact_grid_right">
@@ -152,8 +184,6 @@
                             <div class="contact_left_grid">
                               
 
-                                
-                             
                                <br><!-- comment -->
                                
                                  <div class="form-group">
@@ -170,12 +200,10 @@
                                     <input  class="form-control"  type="file"  id="photo"  required="">
                                 </div>
 
-                               
-                               
-
-
-                            </div>
+                            
                             <input class="form-control" type="button" value="Add SubService" onclick="addsubservice()">
+                            
+                          
                             </div>
                         </form>
                     </div>

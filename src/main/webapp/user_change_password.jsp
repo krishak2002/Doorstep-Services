@@ -5,7 +5,7 @@
         <title>JSP Page</title>
         <%@include file="header.jsp"%>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
 
@@ -21,14 +21,20 @@
           function user_change_password()
           {
               
-              alert("user_change_password_working");
+              //alert("user_change_password_working");
              
               var oldpassword= document.getElementById("oldpassword").value ;
                var newpassword= document.getElementById("newpassword").value;
                var confirmnewpassword= document.getElementById("comfirmnewpassword").value;
                
                if(newpassword!==confirmnewpassword){
-                   alert("new password and confirm new password not matching!");
+                   //alert("New password and confirm new password not matching!");
+                   
+                    Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'New password and confirm new password not matching!'
+                            });
                }
               
                else{
@@ -43,7 +49,30 @@
                         // Typical action to be performed when the document is ready:
 
                         var ans = xhttp.responseText;
-                        alert(ans);
+                      //  alert(ans);
+                      
+                       if(ans==="success")
+                    {
+                       Swal.fire({
+                                icon: 'success',
+                                title: 'Done...',
+                                text: ans
+                            }).then(function () {
+                                window.location = "index.jsp";
+                            });
+                             
+                }
+                      
+                    
+                    else{
+                           Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: ans
+                    });
+                   
+                         //document.getElementById("d1").innerHTML = ans;
+                    }
 
                     }
                 };
@@ -75,7 +104,7 @@
             <div class="test_agile_info py-5">
                 <div class="container py-lg-3">
                     <div class="heading text-center">
-                        <i class="fas fa-cut"></i>
+                        <i class="fas fa-home"></i>
                         <h3 class="heading mb-sm-5 mb-3 text-uppercase" >Change Your Password</h3>
                     </div>
                     <div class="contact_grid_right">

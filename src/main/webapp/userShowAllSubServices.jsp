@@ -38,7 +38,7 @@
             }
 
             function renderAsHTML(t) {
-                alert(t);
+                //alert(t);
                  
             var ans = "";
             var obj = JSON.parse(t);

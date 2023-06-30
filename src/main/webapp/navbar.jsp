@@ -185,7 +185,7 @@
         </div>
         <div class="logo text-center">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-cut"></i> Barber <span> Best Hair Salon</span></a> 
+                <i class="fas fa-home"></i> DoorStep Services <span> At Your Door</span></a> 
         </div>
     </div>
 </header>

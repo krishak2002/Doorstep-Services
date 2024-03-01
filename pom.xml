@@ -44,6 +44,7 @@
             <version>1.1.1</version>
         </dependency>
 
+<!--       below 2 entriese used to run jsp in springboot-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
